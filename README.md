@@ -152,7 +152,7 @@ All scheduling algorithms are executed on this Linux-derived dataset.
 ├── scheduling.py
 ├── requirements.txt
 └── README.md
-``` ← This is where you close it
+``` 
 
 ----------------------------------------------------------------------------------------------------
 
