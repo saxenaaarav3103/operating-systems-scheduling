@@ -47,10 +47,16 @@ It also demonstrates OS–Python integration by fetching live processes from Lin
 
 🧠 Algorithm Explanations
 
-1. FCFS — First Come First Serve
+### 1. FCFS — First Come First Serve
 
-Concept - Explanation
-Selection Rule - Process with earliest Arrival Time (AT) gets CPU first
-Preemption - ❌ No
-CT Formula - CT = start_time + BT
-Behaviour - Fair but suffers convoy effect
+| Concept        | Explanation                                      |
+|----------------|--------------------------------------------------|
+| Selection Rule | Process with earliest Arrival Time (AT) first    |
+| Preemption     | No                                               |
+| CT Formula     | CT = start_time + BT                             |
+| Behaviour      | Fair but suffers from convoy effect              |
+
+**How It Works:**
+- Sort processes by Arrival Time  
+- If CPU is idle, jump to next arrival  
+- Execute each process fully in order  
