@@ -7,6 +7,17 @@
   <img src="https://img.shields.io/badge/Visualization-Matplotlib-green?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Category-Operating%20Systems-yellow?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Scheduling-FCFS%20%7C%20SJF%20%7C%20Priority%20%7C%20RR-red?style=for-the-badge" />
+
+  ![PYTHON](https://img.shields.io/badge/PYTHON-3.10%2B-blue?style=flat-square)
+![PLATFORM](https://img.shields.io/badge/PLATFORM-LINUX%20%7C%20MACOS%20%7C%20WINDOWS-orange?style=flat-square)
+![LINUX-INTEGRATION](https://img.shields.io/badge/LINUX-INTEGRATION-red?style=flat-square)
+![NETWORK](https://img.shields.io/badge/CATEGORY-NETWORKING-yellow?style=flat-square)
+![SUBNETTING](https://img.shields.io/badge/SUBNETTING-IPv4%20%7C%20CIDR%20%7C%20MASKS-lightgrey?style=flat-square)
+![HOST-SCANNING](https://img.shields.io/badge/FEATURE-HOST%20SCANNING-green?style=flat-square)
+![VALIDATION](https://img.shields.io/badge/FEATURE-RESERVED%20IP%20CHECKS-grey?style=flat-square)
+![TOOLING](https://img.shields.io/badge/LINUX%20TOOLS-ip%20%7C%20ping-blueviolet?style=flat-square)
+![PYTHON-ONLY](https://img.shields.io/badge/MODE-PYTHON--ONLY-blue?style=flat-square)
+![LINUX-MODE](https://img.shields.io/badge/MODE-LINUX--ENHANCED-red?style=flat-square)
 </p>
 
 ----------------------------------------------------------------------------------------------------
