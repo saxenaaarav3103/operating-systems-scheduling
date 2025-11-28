@@ -146,10 +146,12 @@ All scheduling algorithms are executed on this Linux-derived dataset.
 
 ## ⭐ Repository Structure
 
-├── scheduling.py
+```text
+.
 ├── linux_integration.py
-├── README.md
-└── requirements.txt
+├── scheduling.py
+├── requirements.txt
+└── README.md
 
 
 ----------------------------------------------------------------------------------------------------
