@@ -1,10 +1,10 @@
 # operating-systems-scheduling
 
-# ---------------------------
-# Gantt charts for Linux processes
-# ---------------------------
+CPU Process Scheduling Simulator
 
-Gantt_Chart(fcfs_gantt, "FCFS Scheduling (Linux Data)")
-Gantt_Chart(sjf_gantt, "SJF Scheduling (Linux Data)")
-Gantt_Chart(rr_gantt, "Round Robin (Linux Data)")
-Gantt_Chart(prio_gantt, "Priority Scheduling (Linux Data)")
+FCFS • SJF • Priority • Round Robin • Linux Integration
+<img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge">  
+<img src="https://img.shields.io/badge/OS-Linux%20Compatible-green?style=for-the-badge">  
+<img src="https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge">  
+<img src="https://img.shields.io/badge/Category-Operating%20Systems-yellow?style=for-the-badge">
+</div>
