@@ -61,4 +61,17 @@ It also demonstrates OS–Python integration by fetching live processes from Lin
 - If CPU is idle, jump to next arrival  
 - Execute each process fully in order  
 
-2. SJF — Shortest Job First (Non-Preemptive)
+### 2. SJF — Shortest Job First (Non-Preemptive)
+
+| Concept        | Explanation                                          |
+|----------------|------------------------------------------------------|
+| Selection Rule | Among arrived processes, choose shortest BT          |
+| Preemption     | No                                                   |
+| Advantage      | Produces minimum average WT and TAT                 |
+| Caveat         | Long processes may starve                           |
+| Behaviour      | Efficient but risk of starvation for long tasks     |
+
+**How It Works:**
+	•	At each time step, collect all processes with AT ≤ current time
+	•	Select the process with minimum BT
+	•	If no process has arrived, fast-forward time
