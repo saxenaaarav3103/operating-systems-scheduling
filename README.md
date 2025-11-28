@@ -60,3 +60,5 @@ It also demonstrates OS–Python integration by fetching live processes from Lin
 - Sort processes by Arrival Time  
 - If CPU is idle, jump to next arrival  
 - Execute each process fully in order  
+
+2. SJF — Shortest Job First (Non-Preemptive)
