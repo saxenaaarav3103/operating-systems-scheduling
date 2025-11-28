@@ -1,5 +1,3 @@
-https://github.com/praptiishah/os-project.git# operating-systems-scheduling
-
 
 # 🖥️ CPU Process Scheduling Simulator
 
