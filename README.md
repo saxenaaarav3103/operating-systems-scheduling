@@ -91,3 +91,106 @@ The simulator demonstrates how different scheduling algorithms behave on both **
 
 ### Turnaround Time (TAT)
   TAT = CT-AT
+
+### Waiting Time (WT)
+  WT = TAT-BT
+
+These values are computed in the helper function `TAT_WT()`.
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Gantt Chart Visualization
+
+Each algorithm generates a Gantt chart demonstrating:
+
+- Execution order  
+- Start & end times  
+- Distinct color for each PID
+
+Generated via:
+
+**Gantt_Chart(gantt_data, “Algorithm Name”)**
+
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Linux Integration (Real OS Data)
+
+### Commands Used
+
+ps -eo pid,comm,pri,ni,etimes,stat,pcpu –sort=-pcpu
+
+Extracted Fields:
+- pid  
+- pri (priority)  
+- ni (nice value)  
+- etimes (elapsed time → burst time)  
+- comm (command name)
+
+### Conversion to Scheduler Format
+
+  {
+“Pid”: str(pid),
+“AT”: arrival_order,
+“BT”: scaled_elapsed_time,
+“Priority”: pri
+}
+
+Large BTs scaled using:
+
+BT = max(1, BT // 50)
+
+All scheduling algorithms are executed on this Linux-derived dataset.
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Repository Structure
+
+├── scheduling.py
+├── linux_integration.py
+├── README.md
+└── requirements.txt
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ How to Run
+
+### Install Dependencies
+
+pip install -r requirements.txt
+
+### Run Core Scheduling Simulation
+
+python scheduling.py
+
+### Run Linux Integration Mode
+
+python linux_integration.py
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Base Test Table
+
+| PID | AT | BT | Priority |
+|-----|----|----|----------|
+| P1  | 0  | 6  | 3        |
+| P2  | 2  | 4  | 1        |
+| P3  | 4  | 5  | 4        |
+| P4  | 6  | 3  | 2        |
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Presentation Checklist
+
+- Show algorithm outputs  
+- Show WT/TAT/CT calculations  
+- Show Linux `ps` output  
+- Show converted Linux processes  
+- Display all Gantt charts  
+- Compare all algorithms on same data  
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ License
+
+This project is for academic use under course submission requirements.
