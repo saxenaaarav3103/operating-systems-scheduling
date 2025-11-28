@@ -90,3 +90,4 @@ The simulator demonstrates how different scheduling algorithms behave on both **
 ## ⭐ Formulas Used
 
 ### Turnaround Time (TAT)
+  TAT = CT-AT
