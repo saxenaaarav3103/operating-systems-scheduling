@@ -1,78 +1,92 @@
 https://github.com/praptiishah/os-project.git# operating-systems-scheduling
 
 
-CPU Process Scheduling Simulator
+# 🖥️ CPU Process Scheduling Simulator
 
-FCFS • SJF • Priority • Round Robin • Linux Integration
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Linux-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Visualization-Matplotlib-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Category-Operating%20Systems-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Scheduling-FCFS%20%7C%20SJF%20%7C%20Priority%20%7C%20RR-red?style=for-the-badge" />
+</p>
 
+----------------------------------------------------------------------------------------------------
 
-<img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge">  
-<img src="https://img.shields.io/badge/OS-Linux%20Compatible-green?style=for-the-badge">  
-<img src="https://img.shields.io/badge/Matplotlib-Visualization-orange?style=for-the-badge">  
-<img src="https://img.shields.io/badge/Category-Operating%20Systems-yellow?style=for-the-badge">
-</div>
+## ⭐ Project Overview
+This project implements a CPU Process Scheduling Simulator in Python, including classical scheduling algorithms, turnaround/waiting time computation, Gantt chart visualization, and **real Linux process integration** using `ps`.
 
-📌 Project Overview
+The simulator demonstrates how different scheduling algorithms behave on both **custom datasets** and **live Linux processes**.
 
-This project implements a fully-functional CPU Process Scheduling Simulator in Python, featuring classical scheduling algorithms and real Linux process integration.
+----------------------------------------------------------------------------------------------------
 
-Designed for Operating Systems coursework, the simulator computes Completion Time (CT), Turnaround Time (TAT), Waiting Time (WT) and visualizes each algorithm using Gantt Charts.
+## ⭐ Algorithm Explanations
 
-It also demonstrates OS–Python integration by fetching live processes from Linux using ps and simulating them through the scheduler.
+### 🔷 1. FCFS — First Come First Serve
 
-
-⸻
-
-🚀 Features
-
-✔ Classical Scheduling Algorithms
-	•	FCFS (First Come First Serve)
-	•	SJF (Shortest Job First — Non-Preemptive)
-	•	Priority Scheduling (Non-Preemptive)
-	•	Round Robin (with Quantum)
-
-✔ Performance Metrics
-	•	Completion Time (CT)
-	•	Turnaround Time (TAT = CT − AT)
-	•	Waiting Time (WT = TAT − BT)
-
-✔ Visualizations
-	•	Automatic Matplotlib Gantt Charts for each algorithm
-
-✔ Linux Process Integration
-	•	Fetch real processes using ps -eo pid,pri,ni,etimes,comm
-	•	Convert into scheduler format
-	•	Analyze how actual OS processes behave under FCFS, SJF, RR, Priority
-
-⸻
-
-🧠 Algorithm Explanations
-
-### 1. FCFS — First Come First Serve
-
-| Concept        | Explanation                                      |
-|----------------|--------------------------------------------------|
-| Selection Rule | Process with earliest Arrival Time (AT) first    |
-| Preemption     | No                                               |
-| CT Formula     | CT = start_time + BT                             |
-| Behaviour      | Fair but suffers from convoy effect              |
+| Concept        | Explanation                                   |
+|----------------|-----------------------------------------------|
+| Selection Rule | Process with earliest Arrival Time (AT) first |
+| Preemption     | No                                            |
+| CT Formula     | CT = start_time + BT                          |
+| Behaviour      | Fair but suffers convoy effect                |
 
 **How It Works:**
 - Sort processes by Arrival Time  
 - If CPU is idle, jump to next arrival  
-- Execute each process fully in order  
+- Execute each fully in order  
 
-### 2. SJF — Shortest Job First (Non-Preemptive)
+---
+
+### 🔷 2. SJF — Shortest Job First (Non-Preemptive)
 
 | Concept        | Explanation                                          |
 |----------------|------------------------------------------------------|
 | Selection Rule | Among arrived processes, choose shortest BT          |
 | Preemption     | No                                                   |
-| Advantage      | Produces minimum average WT and TAT                 |
-| Caveat         | Long processes may starve                           |
-| Behaviour      | Efficient but risk of starvation for long tasks     |
+| Advantage      | Produces lowest average WT and TAT                  |
+| Caveat         | Long processes may starve                            |
+| Behaviour      | Efficient but starvation-prone                       |
 
 **How It Works:**
-	•	At each time step, collect all processes with AT ≤ current time
-	•	Select the process with minimum BT
-	•	If no process has arrived, fast-forward time
+- At each step, collect all processes with AT ≤ current time  
+- Select the one with minimum BT  
+- If nothing has arrived, fast-forward time  
+
+---
+
+### 🔷 3. Priority Scheduling (Non-Preemptive)
+
+| Concept        | Explanation                                          |
+|----------------|------------------------------------------------------|
+| Priority Rule  | Lower number = Higher priority                       |
+| Preemption     | No                                                   |
+| Behaviour      | Favors important tasks but can cause starvation      |
+
+**How It Works:**
+- Among all arrived processes, select highest priority  
+- Continue until completion  
+- No preemption  
+
+---
+
+### 🔷 4. Round Robin Scheduling
+
+| Concept        | Explanation                                       |
+|----------------|---------------------------------------------------|
+| Rule           | Assign CPU time slices using fixed quantum        |
+| Preemption     | Yes                                               |
+| Behaviour      | Fair CPU time-sharing                              |
+| Use Case       | Common in modern multitasking OS                  |
+
+**How It Works:**
+- Maintain a ready queue  
+- Each process gets CPU for max `quantum` time  
+- If incomplete, send back to queue  
+- Add new arrivals dynamically  
+
+----------------------------------------------------------------------------------------------------
+
+## ⭐ Formulas Used
+
+### Turnaround Time (TAT)
